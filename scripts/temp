@@ -1,0 +1,233 @@
+
+    1: {
+      rightTriangle: "#B5193B",
+      leftTriangle: "#FFFFFF",
+      square: " #EE1B2E",
+    },
+    2: {
+      rightTriangle: "#FE5E02",
+      leftTriangle: "#FFFFFF",
+      square: " #FE8602",
+    },
+    3: {
+      rightTriangle: "#B5193B",
+      leftTriangle: "#FFFFFF",
+      square: " #FE8602",
+    },
+    4: {
+      rightTriangle: "#22974C",
+      leftTriangle: "#FFFFFF",
+      square: " #24DC4F",
+    },
+    5: {
+      rightTriangle: "#49BDFF",
+      leftTriangle: "#FFFFFF",
+      square: " #2D97F7",
+    },
+    6: {
+      rightTriangle: "#0000C9",
+      leftTriangle: "#FFFFFF",
+      square: " #0101F0",
+    },
+    7: {
+      rightTriangle: "#8500D3",
+      leftTriangle: "#FFFFFF",
+      square: " #A000F1",
+    },
+  return palette[id] || palette[1];
+
+
+export const TetrominoTypes = {
+  T: {
+    id: 1,
+    initPosition: { row: 0, column: 3 },
+    shapes: [
+      [
+        { row: 0, column: 0 },
+        { row: 0, column: 1 },
+        { row: 0, column: 2 },
+        { row: 0, column: 3 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+        { row: 2, column: 2 },
+      ],
+      [
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 1 },
+      ],
+    ],
+  },
+  O: {
+    id: 2,
+    initPosition: { row: 0, column: 4 },
+    shapes: [
+      [
+        { row: 0, column: 0 },
+        { row: 0, column: 1 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+      ],
+    ],
+  },
+  I: {
+    id: 3,
+    initPosition: { row: -1, column: 3 },
+    shapes: [
+      [
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 1, column: 3 },
+      ],
+      [
+        { row: 0, column: 2 },
+        { row: 1, column: 2 },
+        { row: 2, column: 2 },
+        { row: 3, column: 2 },
+      ],
+      [
+        { row: 2, column: 0 },
+        { row: 2, column: 1 },
+        { row: 2, column: 2 },
+        { row: 2, column: 3 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+        { row: 3, column: 1 },
+      ],
+    ],
+  },
+  S: {
+    id: 4,
+    initPosition: { row: 0, column: 3 },
+    shapes: [
+      [
+        { row: 0, column: 1 },
+        { row: 0, column: 2 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 2 },
+      ],
+      [
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 0 },
+        { row: 2, column: 1 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+      ],
+    ],
+  },
+  Z: {
+    id: 5,
+    initPosition: { row: 0, column: 3 },
+    shapes: [
+      [
+        { row: 0, column: 0 },
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+      ],
+      [
+        { row: 0, column: 2 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 1 },
+      ],
+      [
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+        { row: 2, column: 2 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 2, column: 0 },
+      ],
+    ],
+  },
+  J: {
+    id: 6,
+    initPosition: { row: 0, column: 3 },
+    shapes: [
+      [
+        { row: 0, column: 0 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 0, column: 2 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+      ],
+      [
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 2 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 2, column: 0 },
+        { row: 2, column: 1 },
+      ],
+    ],
+  },
+  L: {
+    id: 7,
+    initPosition: { row: 0, column: 3 },
+    shapes: [
+      [
+        { row: 0, column: 2 },
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+      ],
+      [
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+        { row: 2, column: 2 },
+      ],
+      [
+        { row: 1, column: 0 },
+        { row: 1, column: 1 },
+        { row: 1, column: 2 },
+        { row: 2, column: 0 },
+      ],
+      [
+        { row: 0, column: 0 },
+        { row: 0, column: 1 },
+        { row: 1, column: 1 },
+        { row: 2, column: 1 },
+      ],
+    ],
+  },
+};
