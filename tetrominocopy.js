@@ -332,4 +332,98 @@ const TetrominoTypes = {
   },
 };
 
-export { Tetromino, TetrominoTypes, Position };
+class TetrominoBag {
+  constructor(canvas, cellsize) {
+    this.canvas = canvas;
+    this.cellsize = cellsize;
+    this.bag = [];
+  }
+  fillBag() {
+    const tetrominoTypes = [
+      TetrominoTypes.I,
+      TetrominoTypes.J,
+      TetrominoTypes.L,
+      TetrominoTypes.O,
+      TetrominoTypes.S,
+      TetrominoTypes.T,
+      TetrominoTypes.Z,
+    ];
+    this.bag.length = 0;
+    tetrominoTypes.forEach((type) => {
+      new Tetromino(
+        this.canvas,
+        type.shapes,
+        this.cellsize,
+        type.initPosition,
+        type.id
+      );
+    });
+    for (let i = this.bag.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [this.bag[i], this.bag[j]] = [this.bag[j], this.bag[i]];
+    }
+  }
+  nextTetromino() {
+    if (this.bag.length === 0) {
+      this.fillBag();
+    }
+    return this.bag.pop();
+  }
+}
+
+export { Tetromino, TetrominoTypes, Position, TetrominoBag };
+
+
+ blockedTetromino() {
+    const tetrominoPosition = this.currentTetromino.currentPosition();
+    console.log(tetrominoPosition);
+    for (let i = 0; i < tetrominoPosition.length; i++) {
+      if (
+        !this.boardTetris.isEmpty(
+          tetrominoPosition[i].row,
+          tetrominoPosition[i].column
+        )
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  blockedTetromino() {
+    const tetrominoPosition = this.currentTetromino.currentPosition();
+    for (let i = tetrominoPosition.length; i >= 0; i--) {
+      if (
+        !this.boardTetris.isEmpty(
+          tetrominoPosition[i].row,
+          tetrominoPosition[i].column
+        )
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
+  fillBag(){
+    const tetrominoTypes = [
+          TetrominoTypes.I,
+          TetrominoTypes.J,
+          TetrominoTypes.L,
+          TetrominoTypes.O,
+          TetrominoTypes.S,
+          TetrominoTypes.Z,
+          TetrominoTypes.T,
+        ];
+
+      tetrominoTypes.forEach(type => {
+        this.bag.push(
+          new Tetromino(this.canvas,type.shapes,this.cellsize,type.initPosition,type.id)
+        )
+        
+      for(let i=this.bag.length-1;i>0;i--){
+        let j=Math.floor(Math.random*(i+1))
+        [this.bag[i],this.bag[j]]=[this.bag[i],this.bag[j]]
+      }
+  }}
