@@ -1,5 +1,3 @@
-import { Grid } from "./grid.js";
-import { BoardTetris } from "./boardTetris.js";
 import { Game } from "./game.js";
 const canvasTetris = document.getElementById("canvas-tetris");
 const rows = 20;

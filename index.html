@@ -1,15 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tetris Retro</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="canvas-container">
-      <canvas id="canvas-tetris"></canvas>
-    </div>
+    <main class="arcade">
+      <header class="arcade__header">
+        <div class="logo">
+          <div class="logo__title">TETRIS</div>
+          <div class="logo__subtitle">Retro Grid Edition</div>
+        </div>
+        <div class="marquee">INSERT COIN</div>
+      </header>
+
+      <section class="arcade__main">
+        <aside class="panel panel--stats">
+          <h2>Marcador</h2>
+          <div class="stat">
+            <span class="stat__label">Puntos</span>
+            <span id="score" class="stat__value">000000</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Lineas</span>
+            <span id="lines" class="stat__value">000</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Nivel</span>
+            <span id="level" class="stat__value">01</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Record</span>
+            <span id="high-score" class="stat__value">000000</span>
+          </div>
+        </aside>
+
+        <div class="screen">
+          <div class="screen__frame">
+            <canvas id="canvas-tetris" aria-label="Tablero de Tetris"></canvas>
+            <div class="overlay overlay--gameover" id="overlay-gameover" hidden>
+              <div class="overlay__content">
+                <div class="overlay__title">GAME OVER</div>
+                <div class="overlay__text">Presiona R o Volver a jugar</div>
+              </div>
+            </div>
+            <div class="overlay overlay--paused" id="overlay-paused" hidden>
+              <div class="overlay__content">
+                <div class="overlay__title">PAUSA</div>
+                <div class="overlay__text">Presiona P para continuar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel panel--side">
+          <h2>Siguiente</h2>
+          <canvas id="canvas-next" aria-label="Siguiente pieza"></canvas>
+          <div class="panel__section">
+            <h3>Controles</h3>
+            <div class="control">Izq/Der mover</div>
+            <div class="control">Arriba rotar</div>
+            <div class="control">Abajo bajar</div>
+            <div class="control">Espacio caida</div>
+            <div class="control">P pausa</div>
+            <div class="control">R reiniciar</div>
+          </div>
+          <button id="btn-restart" class="btn">Volver a jugar</button>
+        </aside>
+      </section>
+
+      <footer class="arcade__footer">
+        <div class="ticker">Arcade CRT // Neon Grid</div>
+      </footer>
+    </main>
     <script src="main.js" type="module"></script>
   </body>
 </html>
